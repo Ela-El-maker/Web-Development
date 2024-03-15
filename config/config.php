@@ -1,9 +1,9 @@
 <?php
 
-if(!isset($_SERVER['HTTP_REFERER'])){
-    header('location:http://localhost/testcommerce/index.php');
-    exit;
-}
+// if(!isset($_SERVER['HTTP_REFERER'])){
+//     header('location:http://localhost/testcommerce/index.php');
+//     exit;
+// }
 
 
 try {
@@ -23,7 +23,7 @@ try {
     $conn = new PDO('mysql:host=' . HOST . ';dbname=' . DB_NAME . ';port=' . DB_PORT, DB_USER, DB_PASS);
     // Setting PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully"; // If connected successfully
+    //echo "Connected successfully"; // If connected successfully
 
 
     // if ($conn == true){
