@@ -56,11 +56,11 @@
                      <h5>Get Our App</h5>
                      <ul class="mb-0">
                          <li class="download-app">
-                             <a href="#"><img src="<?php echo APPURL; ?>assets/img/playstore.png"></a>
+                             <a href="#"><img src="<?php echo APPURL; ?>/assets/img/playstore.png"></a>
                          </li>
                          <li style="height: 200px">
                              <div class="mockup">
-                                 <img src="<?php echo APPURL; ?>assets/img/mockup.png">
+                                 <img src="<?php echo APPURL; ?>/assets/img/mockup.png">
                              </div>
                          </li>
                      </ul>
@@ -70,15 +70,15 @@
         <p class="copyright">&copy; 2018 Freshcery | Groceries Organic Store. All rights reserved.</p>
     </footer>
 
-    <script type="text/javascript" src="<?php echo APPURL; ?>assets/js/jquery.js"></script>
-    <script type="text/javascript" src="<?php echo APPURL; ?>assets/js/jquery-migrate.js"></script>
-    <script type="text/javascript" src="<?php echo APPURL; ?>assets/packages/bootstrap/libraries/popper.js"></script>
-    <script type="text/javascript" src="<?php echo APPURL; ?>assets/packages/bootstrap/bootstrap.js"></script>
-    <script type="text/javascript" src="<?php echo APPURL; ?>assets/packages/o2system-ui/o2system-ui.js"></script>
-    <script type="text/javascript" src="<?php echo APPURL; ?>assets/packages/owl-carousel/owl-carousel.js"></script>
-    <script type="text/javascript" src="<?php echo APPURL; ?>assets/packages/cloudzoom/cloudzoom.js"></script>
-    <script type="text/javascript" src="<?php echo APPURL; ?>assets/packages/thumbelina/thumbelina.js"></script>
-    <script type="text/javascript" src="<?php echo APPURL; ?>assets/packages/bootstrap-touchspin/bootstrap-touchspin.js"></script>
-    <script type="text/javascript" src="<?php echo APPURL; ?>assets/js/theme.js"></script>
+    <script type="text/javascript" src="<?php echo APPURL; ?>/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="<?php echo APPURL; ?>/assets/js/jquery-migrate.js"></script>
+    <script type="text/javascript" src="<?php echo APPURL; ?>/assets/packages/bootstrap/libraries/popper.js"></script>
+    <script type="text/javascript" src="<?php echo APPURL; ?>/assets/packages/bootstrap/bootstrap.js"></script>
+    <script type="text/javascript" src="<?php echo APPURL; ?>/assets/packages/o2system-ui/o2system-ui.js"></script>
+    <script type="text/javascript" src="<?php echo APPURL; ?>/assets/packages/owl-carousel/owl-carousel.js"></script>
+    <script type="text/javascript" src="<?php echo APPURL; ?>/assets/packages/cloudzoom/cloudzoom.js"></script>
+    <script type="text/javascript" src="<?php echo APPURL; ?>/assets/packages/thumbelina/thumbelina.js"></script>
+    <script type="text/javascript" src="<?php echo APPURL; ?>/assets/packages/bootstrap-touchspin/bootstrap-touchspin.js"></script>
+    <script type="text/javascript" src="<?php echo APPURL; ?>/assets/js/theme.js"></script>
 </body>
 </html>

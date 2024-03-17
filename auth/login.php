@@ -1,9 +1,58 @@
 <?php require '../includes/header.php'; ?>
 <?php require '../config/config.php'; ?>
 
+<?php 
+
+if (isset($_SESSION['username'])) {
+    echo "<script>window.location.href= '".APPURL."';</script>";
+}
+
+if(isset($_POST['submit'])){
+    if(empty($_POST['email'])  || empty($_POST['password'])) {
+        echo "<script>alert('One or more inputes are empty');</script>";
+    }
+    else{
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+
+        // Query
+        $login = $conn-> query(
+            "SELECT * FROM users WHERE email = '$email'"
+        );
+
+
+        $login->execute();
+        $fetch = $login-> fetch(
+            PDO::FETCH_ASSOC
+        );
+
+        //validate email
+        if($login->rowCount() > 0){
+            // Validate Pass
+            // $_SESSION['email'] = $email;
+            //header('location:../index.php');
+            if(password_verify($password, $fetch['password']) ){
+               $_SESSION['username'] = $fetch['username'];
+               $_SESSION['email'] = $fetch['email'];
+               $_SESSION['user_id'] = $fetch['id'];
+               $_SESSION['image'] = $fetch['image'];
+
+               echo "<script>window.location.href= '".APPURL."';</script>";
+
+                
+            }else{
+                echo "<script>alert('Incorrect Username or Password');</script>";
+            }
+        }else{
+            echo "<script>alert('Invalid Username or Password');</script>";
+        }
+    }
+}
+?>
     <div id="page-content" class="page-content">
         <div class="banner">
-            <div class="jumbotron jumbotron-bg text-center rounded-0" style="background-image: url('assets/img/bg-header.jpg');">
+            <div class="jumbotron jumbotron-bg text-center rounded-0" style="background-image: url('<?php echo APPURL ?>/assets/img/bg-header.jpg');">
                 <div class="container">
                     <h1 class="pt-5">
                         Login Page
@@ -14,15 +63,15 @@
 
                     <div class="card card-login mb-5">
                         <div class="card-body">
-                            <form class="form-horizontal" action="index.html">
+                            <form class="form-horizontal" method="POST" action="login.php">
                                 <div class="form-group row mt-3">
                                     <div class="col-md-12">
-                                        <input class="form-control" type="text" required="" placeholder="Username">
+                                        <input class="form-control" name="email" type="text" required="" placeholder="Email">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-12">
-                                        <input class="form-control" type="password" required="" placeholder="Password">
+                                        <input class="form-control" name="password" type="password" required="" placeholder="Password">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -36,7 +85,7 @@
                                 </div>
                                 <div class="form-group row text-center mt-4">
                                     <div class="col-md-12">
-                                        <button type="submit" class="btn btn-primary btn-block text-uppercase">Log In</button>
+                                        <button name="submit" type="submit" class="btn btn-primary btn-block text-uppercase">Log In</button>
                                     </div>
                                 </div>
                             </form>

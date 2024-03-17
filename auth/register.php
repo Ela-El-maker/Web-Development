@@ -2,6 +2,11 @@
 <?php require '../config/config.php'; ?>
 <?php 
 
+
+if (isset($_SESSION['username'])) {
+    echo "<script>window.location.href= '".APPURL."';</script>";
+}
+
 if(isset($_POST['submit'])){
     if(empty($_POST['fullname']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['username'])) {
         echo "<script>alert('One or more inputes are empty');</script>";
@@ -28,8 +33,8 @@ if(isset($_POST['submit'])){
                 ]
                 
             );
-            //header( "Location: ".APPURL."/login.php" );
-            
+            // header( "Location: ".APPURL."/login.php" );
+            echo "<script> window.location.href = 'login.php'; </script>";
             // $result = mysqli_query($conn, $sql);
             // if($result){
             //     echo "<script>alert('Registration Successful');</script>";
