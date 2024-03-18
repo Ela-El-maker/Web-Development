@@ -66,7 +66,7 @@ define("APPURL", "http://testcommerce.test/")
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="avatar-header">
-                                    <img src="<?php echo APPURL; ?>/assets/img/logo/avatar.jpg">
+                                    <img src="<?php echo APPURL; ?>/assets/img/logo/<?php echo $_SESSION['image']; ?>">
                                 </div> 
                                 <?php echo $_SESSION['username'];?>
                             </a>
